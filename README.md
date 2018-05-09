@@ -2,17 +2,14 @@
 
 ## ***To add this to your folder:***
 ```
-git init
-git add .
-git commit -m "First Commit"
-git remote add origin git@github.com:walshcam/kidsAllowance.git
-git push origin master
+git clone git@github.com:walshcam/kidsAllowance.git
 ```
 
 ## ***To create a branch:***
 
-
-`git checkout -b branchname`
+```
+git checkout -b branchname
+```
 
 ## ***To push a branch:***
 
