@@ -1,0 +1,31 @@
+{
+  "name": "kids-allowance",
+  "version": "1.0.0",
+  "description": "NPM package needed for Project 2 of UCF Bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walshcam/kidsAllowance.git"
+  },
+  "keywords": [
+    "UCF",
+    "express",
+    "mysql"
+  ],
+  "author": "Cameron Appy Bill Jaime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walshcam/kidsAllowance/issues"
+  },
+  "homepage": "https://github.com/walshcam/kidsAllowance#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7",
+    "sequelize": "^4.37.7"
+  }
+}
