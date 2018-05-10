@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Transaction = sequelize.define("Kid", {
+    var Transaction = sequelize.define("Transaction", {
         deposit: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
