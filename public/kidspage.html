@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="maintitle">
+    Kids View
+</div>
+<br>
+<div id="container">
+    Current Balance: <p id="currentbalance"> 
+        <!-- insert total here -->
+    </p>
+
+    Amount Until Goal: <p id="amounttogo"> 
+        <!-- Insert difference between total and goal here -->
+    </p>
+
+</div>
+<div id="goalitem">
+My Goal:
+
+<p id="goal">
+       This would be my current goal
+    </p>
+
+<div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Enter a New Goal</label>
+              </div>
+              <div class="input-field col s3">
+              <textarea id="textarea2" class="materialize-textarea"></textarea>
+              <label for="textarea1">Its Cost</label>
+            </div>
+            <div class="input-field col s3">
+                    <button id="wishSubmit" class="btn waves-effect waves-light" type="submit" name="action">Enter New Goal
+                            
+                    </button>
+            </div>
+          </div>
+        </form>
+      </div>
+            
+
+    
+</div>
+
+<script>
+ $("#wishSubmit").on("click", function(event) {
+     
+    var newWish = {
+        wish: $("#textarea1").val().trim(),
+        cost: $("#textarea2").val().trim()
+       
+      };
+      console.log("newwish:" + newWish)
+
+       $.ajax("/wish", {
+        type: "POST",
+        data: newWish
+      }).then(
+        function() {
+          console.log("logged new wish");
+
+
+ });
+});
+
+
+
+</script>
+
+
+
+
+</body>
