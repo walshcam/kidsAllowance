@@ -14,10 +14,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        total: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // Utilize This If transaction.js Is Not Used
+        // total: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
         wish: {
             type: DataTypes.TEXT,
         }
@@ -28,6 +29,12 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey: {
                 allowNull: false
             }
+        });
+    };
+
+    Kid.associate = function (models) {
+        Kid.hasMany(models.Transaction, {
+            onDelete: "cascade"
         });
     };
 
