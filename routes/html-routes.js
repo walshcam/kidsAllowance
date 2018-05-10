@@ -17,15 +17,15 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/kidspage.html"));
   });
 
-//   // cms route loads cms.html
-//   app.get("/cms", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/cms.html"));
-//   });
+  // cms route loads cms.html
+  app.get("/parent", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/parent.html"));
+  });
 
-//   // blog route loads blog.html
-//   app.get("/blog", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/blog.html"));
-//   });
+  // blog route loads blog.html
+  app.get("/kid", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/kid.html"));
+  });
 
 //   // authors route loads author-manager.html
 //   app.get("/authors", function(req, res) {
