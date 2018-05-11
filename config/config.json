@@ -2,9 +2,9 @@
     "development": {
       "username": "root",
       "password": "root",
-      "database": "kidsAllowance",
-      "host": "localhost",
-      "port": "8889",
+      "database": "kidsallowance_db",
+      "host": "127.0.0.1",
+      "port": 8889,
       "dialect": "mysql"
     },
     "test": {

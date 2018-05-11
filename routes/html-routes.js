@@ -1,35 +1,67 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
 var path = require("path");
-
-// Routes
-// =============================================================
+var db = require("../models");
 module.exports = function(app) {
+    app.get("/", function(req, res) {
+      res.sendFile(path.join(__dirname, "../public/view.html"));
+    });
+  
+    app.get("/newparent", function(req, res){
+      res.sendFile(path.join(__dirname, "../public/newparent.html"))
+    });
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+    app.get("/newkid", function(req, res){
+      res.sendFile(path.join(__dirname, "../public/newkid.html"))
+    });
 
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/kidspage.html"));
-  });
+    app.get("/returningparent", function(req, res){
+      res.sendFile(path.join(__dirname, "../public/returningparent.html"))
+    });
 
-  // cms route loads cms.html
-  app.get("/parent", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/parent.html"));
-  });
+    app.post("/returningparent",function(req,res){ 
+      db.Parent.findOne({
+        where:{
+          username:req.body.username
+        }
+      }).then(function (dbUser) {
+          if(dbUser){
+            console.log(dbUser);
+            if(dbUser.dataValues.parentpassword===req.body.password){
+              res.redirect("https://www.google.com/");
+            }
+            else{
+              res.redirect("/returningparent");
+              
+            }
+          }
+      });
 
-  // blog route loads blog.html
-  app.get("/kid", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/kid.html"));
-  });
+    });
 
-//   // authors route loads author-manager.html
-//   app.get("/authors", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-//   });
+    app.post("/returningkid",function(req,res){ 
+      db.Kid.findOne({
+        where:{
+          username:req.body.username
+          
+        }
+      }).then(function (dbUser) {
+        //res.send("passed");
+        console.log(dbUser);
+          if(dbUser){
+            console.log(dbUser);
+            if(dbUser.dataValues.kidpassword===req.body.password){
+              res.redirect("https://www.google.com/");
+            }
+            else{
+              res.redirect("/returningkid");
+              
+            }
+          }
+      });
 
+    });
+
+    app.get("/returningkid", function(req, res){
+      res.sendFile(path.join(__dirname, "../public/returningkid.html"))
+    });
 };
+  
