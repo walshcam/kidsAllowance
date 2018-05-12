@@ -10,48 +10,91 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-    <div id="maintitle">
-    Kids View
-</div>
-<br>
-<div id="container">
-    Current Balance: <p id="currentbalance"> 
-        <!-- insert total here -->
-    </p>
-
-    Amount Until Goal: <p id="amounttogo"> 
-        <!-- Insert difference between total and goal here -->
-    </p>
-
-</div>
-<div id="goalitem">
-My Goal:
-
-<p id="goal">
-       This would be my current goal
-    </p>
-
-<div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Enter a New Goal</label>
-              </div>
-              <div class="input-field col s3">
-              <textarea id="textarea2" class="materialize-textarea"></textarea>
-              <label for="textarea1">Its Cost</label>
+    <!-- Title Row -->
+    <div class = "row">
+        <div class = "col s12">
+            <div class="card teal lighten-4">
+                <div class="card-content center-align">
+                    <h1>Kid Page</h1>
+                </div>
             </div>
-            <div class="input-field col s3">
-                    <button id="wishSubmit" class="btn waves-effect waves-light" type="submit" name="action">Enter New Goal
-                            
-                    </button>
-            </div>
-          </div>
-        </form>
-      </div>
-            
+        </div>
+    </div>
 
+    <div class = "container">
+
+        <!-- Current Balance -->
+        <div class = "row">
+            <div class = "col s12">
+                <div class="card teal darken-1">
+                    <div class="card-content white-text">
+                        <h1 class="card-title">Current Balance</h1>
+                        <!-- Input for Current Balance -->
+                        <span id = "currentbalance"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Amount Until Goal -->
+        <div class = "row">
+            <div class = "col s12">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <h1 class="card-title">Amount To Go Until Goal</h1>
+                        <!-- Input For Amount Left To Go -->
+                        <span id = "amounttogo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Goal Item -->
+        <div class = "row">
+            <div class = "col s12">
+                <div class="card teal darken-3">
+                    <div class="card-content white-text">
+                        <h1 class="card-title">Goal Item</h1>
+                        <!-- Input For Amount Left To Go -->
+                        <span id = "goalitem"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goal Cost -->
+        <div class = "row">
+            <div class = "col s12">
+                <div class="card teal darken-4">
+                    <div class="card-content white-text">
+                        <h1 class="card-title">Goal Cost</h1>
+                        <!-- Input For Amount Left To Go -->
+                        <span id = "goalcost"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form To Input A New Goal -->
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Enter a New Goal</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <textarea id="textarea2" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Its Cost</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <button id="wishSubmit" class="btn waves-effect waves-light" type="submit" name="action">Enter New Goal
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     
 </div>
 
