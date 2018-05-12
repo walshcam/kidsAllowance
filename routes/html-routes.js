@@ -26,7 +26,7 @@ module.exports = function(app) {
           if(dbUser){
             console.log(dbUser);
             if(dbUser.dataValues.parentpassword===req.body.password){
-              res.redirect("https://www.google.com/");
+              res.redirect("/parentspage");
             }
             else{
               res.redirect("/returningparent");
@@ -37,31 +37,36 @@ module.exports = function(app) {
 
     });
 
-    app.post("/returningkid",function(req,res){ 
+    app.post("/returningkid", function (req, res) {
       db.Kid.findOne({
-        where:{
-          username:req.body.username
-          
+        where: {
+          username: req.body.username
         }
       }).then(function (dbUser) {
         //res.send("passed");
         console.log(dbUser);
-          if(dbUser){
-            console.log(dbUser);
-            if(dbUser.dataValues.kidpassword===req.body.password){
-              res.redirect("https://www.google.com/");
-            }
-            else{
-              res.redirect("/returningkid");
-              
-            }
+        if (dbUser) {
+          console.log(dbUser);
+          if (dbUser.dataValues.kidpassword === req.body.password) {
+            res.redirect("/kidspage?username=" + req.body.username);
           }
+          else {
+            res.redirect("/returningkid");
+          }
+        }
       });
-
     });
 
     app.get("/returningkid", function(req, res){
       res.sendFile(path.join(__dirname, "../public/returningkid.html"))
+    });
+
+    app.get("/kidspage", function (req, res) {
+      res.sendFile(path.join(__dirname, "../public/kidspage.html"))
+    });
+
+    app.get("/parentspage", function (req, res) {
+      res.sendFile(path.join(__dirname, "../public/parentspage.html"))
     });
 };
   
