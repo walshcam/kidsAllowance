@@ -15,10 +15,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
         },
         // Utilize This If transaction.js Is Not Used
-        // total: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
+         total: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+         },
         wish: {
             type: DataTypes.TEXT,
         }
