@@ -13,7 +13,7 @@ module.exports = function(app) {
     
     //Creates page that shows individual parent
     app.get("/api/parent/:id", function(req, res) {
-        db.Author.findOne({
+        db.Parent.findOne({
             where: {
                 id: req.params.id
             },

@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Chore.associate = function (models) {
-        Transaction.belongsTo(models.Chore, {
+        Chore.belongsTo(models.Parent, {
             foreignKey: {
                 allowNull: false
             }

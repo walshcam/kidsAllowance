@@ -18,4 +18,19 @@ module.exports = function (app) {
             res.json(dbKid);
         });
     });
+
+
+    app.get("/api/getkiddetails/:username", function (req, res) {
+        console.log("username="+req.params.username)
+        db.Kid.findOne({
+        where:{
+            username:req.params.username
+        }
+        }).then(function (dbKid) {
+            res.json(dbKid);
+        });
+
+    });
+
+
 };
