@@ -1,12 +1,15 @@
 $(document).ready(function () {
+
+  // Variables
   var wishinput = $("#textarea1");
   var costinput = $("#textarea2");
-  var wishp = $("#goal");
+  var wishp = $("#goalitem");
+  var wishcost = $("#goalcost");
   var amount = $("#currentbalance");
   var difference = $("#amounttogo");
   var kiduser = $("#kiduser");
-    var url = window.location.search;
-    var usernm;
+  var url = window.location.search;
+  var usernm;
 
 // Render the kids page with info
     getkiddata();
@@ -17,6 +20,10 @@ $(document).ready(function () {
 
     function wishformsubmit(event) {
       event.preventDefault();
+      console.log("this is wishinput: " + wishinput.val().trim());
+      console.log("this is costinput: " + costinput.val());
+      console.log("usernm: " + usernm);
+    
       if (!wishinput.val().trim()) {
           alert("Wish cannot be empty")
           return;
@@ -32,7 +39,7 @@ $(document).ready(function () {
 
 
   function insertwish(data) { 
-    // clearfields();
+    console.log("usernm: " + usernm);
     $.ajax("/api/kidslist", {
      type: "PUT",
      data: data
@@ -41,14 +48,10 @@ $(document).ready(function () {
        getkiddata();
       
        console.log("logged new wish");
-});
+  });
 }
 
-// function clearfields() {
-//   wishinput.value = "";
-//   costinput.value = "";
-// }
-
+// API request to get data
     function getkiddata() {
 
       if (url.indexOf("?username=") !== -1) {
@@ -60,9 +63,17 @@ $(document).ready(function () {
 
 
   function renderkidspage(data) {
+    // Inserting data
     kiduser.html("Welcome " + data.username);
     amount.html(data.total);
+    console.log("wishinput: " + wishinput.value);
+    // Clearing inputs
+    $('#textarea1').val('');
+    M.textareaAutoResize($('#textarea1'));
+    $('#textarea2').val('');
+    M.textareaAutoResize($('#textarea2'));
     console.log("data cost:" + data.cost)
+    // calculating amount till goal
     if(data.cost === null) {
       difference.html("No goal has been entered")}
       else {
@@ -72,24 +83,11 @@ $(document).ready(function () {
         console.log("diff: " + diff)
         difference.html(diff);
       };
-      wishp.html(data.wish + " " + data.cost);
+      wishp.html(data.wish);
+      wishcost.html(data.cost);
 
     }
      
     });
 
-    // if (url.indexOf("?username=") !== -1) {
-    //   usernm = url.split("=")[1];
-    // }
-  
-    // console.log("fetch Logged in kids's details");
-    // $.get("/api/getkiddetails/"+usernm, function (data) {
-    //   console.log("data:" + JSON.stringify(data));
-    //   $("body").append("WELCOME "+data.kidname);
-    //   $("body").append("<br> Current Balance:"+data.total);
-     
-    // });
-  
-  
-  
-  // });
+   
