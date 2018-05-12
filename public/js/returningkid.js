@@ -9,7 +9,7 @@ $(document).ready(function () {
         var usernameinput = $("#returningkidusername").val().trim();
         var passwordinput = $("#returningkidpassword").val().trim();
         var matchFound = false;
-
+        window.location.href = "/kidspage?username=" + usernameinput;
         // $.get("/api/kidslist", function (data) {
         //     console.log("USER ENTERED:"+usernameinput + "," + passwordinput);
         //     for (var i = 0; i < data.length; i++) {

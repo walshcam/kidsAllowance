@@ -31,6 +31,25 @@ module.exports = function (app) {
         });
 
     });
+  
+    
+    
+
+    app.put("/api/kidslist", function(req, res) {
+        db.Kid.update(
+            req.body,
+            {
+                where: {
+                    username: req.body.username
+                }
+            }).then(function(result) {
+                res.json(result);
+            });
+    });
 
 
-};
+
+    };
+
+
+

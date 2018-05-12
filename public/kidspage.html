@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
@@ -15,6 +15,9 @@
 </div>
 <br>
 <div id="container">
+    <div id="welcome">
+        <p id="kiduser"></p>
+    </div>
     Current Balance: <p id="currentbalance"> 
         <!-- insert total here -->
     </p>
@@ -31,7 +34,17 @@ My Goal:
        This would be my current goal
     </p>
 
-<div class="row">
+
+Enter a new Goal:
+    <form id="wishform">
+            Wish:<br>
+            <input id="textarea1" type="text" name="firstname"><br>
+            Cost:<br>
+            <input id="textarea2" type="text" name="lastname">
+            <input type="submit" value="Submit">
+    </form>
+
+<!-- <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
@@ -49,7 +62,7 @@ My Goal:
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
             
 
     
