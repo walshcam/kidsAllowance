@@ -34,6 +34,10 @@ $(document).ready(function() {
       $.post("/api/newparent", parentData)
         
     }  
-  
+
+    //Initialize Materialize Components
+    M.AutoInit();
+
+
   });
   

@@ -28,6 +28,8 @@ $(document).ready(function () {
         // });
     }
 
+    //Initialize Materialize Components
+    M.AutoInit();
 
 
 });
