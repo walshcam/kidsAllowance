@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+    justify-content: left;
+}
+
+@media only screen and (min-width: 601px) {
+.m8 {
+    margin-right: auto;
+    margin-left: auto;
+}
+}
