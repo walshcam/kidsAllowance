@@ -32,11 +32,11 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
-    Kid.associate = function (models) {
-        Kid.hasMany(models.Transaction, {
-            onDelete: "cascade"
-        });
-    };
+    // Kid.associate = function (models) {
+    //     Kid.hasMany(models.Transaction, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     return Kid;
 };
