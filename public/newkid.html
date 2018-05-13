@@ -25,7 +25,8 @@
 <div class = "container">
     <div class = "row">
         <form id="newformkid" action="/action_page.php" class = "col s12">
-            <!-- Dropdown Trigger -->
+            
+            <!-- Dropdown For Parent -->
             <div class = "row">
                 <div class = "input-field col s12 m6">
                     <select id = "newkidparentname">
@@ -34,11 +35,14 @@
                     <label>Select Your Parent</label>
                 </div>
             </div>
+            
             <!-- Name Input -->
             <div class = "row">
                 <div class = "input-field col s12">
                     <input type="text" name="firstname" id="newkidname">
                     <label for = "newkidname">Name: </label>
+                </div>
+            </div>
             
             <!-- Username Input -->
             <div class = "row">
@@ -63,11 +67,8 @@
                     <label for = "newkidbalance">Starting Balance: </label>
                 </div>
             </div>
-                    <!-- <br> Select Parent:
-            <br>
-            <select id="newkidparentname">
-            </select>
-            <br> -->
+
+            <!-- Submit Button -->
             <div class = "row">
                 <div class = "input-field col s12">
                     <input type="submit" value="Submit" id="submitnewkid" class = "btn waves-effect waves-green btn-flat">
