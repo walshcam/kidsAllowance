@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
          },
         wish: {
             type: DataTypes.TEXT,
+        },
+        cost: {
+            type: DataTypes.INTEGER,
+            
         }
     });
 

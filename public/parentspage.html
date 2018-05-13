@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Parent Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     <!-- Title Row -->
@@ -16,15 +15,21 @@
     <div class = "col s12">
         <div class="card teal lighten-4">
             <div class="card-content">
-                <h1 class="card-title">Parent Page</h1>
+                <h1 class="center-align">Parent Page</h1>
             </div>
         </div>
     </div>
 </div>
 
     <!-- Children Cards -->
-<div class = "container">
-        <div class="row">
+<div id = "childrenContainer" class = "container">
+    <!-- Where The Deposit / Withdrawal Field Goes -->
+    <div id = "inputRow" class = "row">
+
+    </div>
+
+    <!-- Where the kid cards go -->
+    <div class="row">
         <div class="col s12 m6 l4">
             <div class="card teal darken-1">
                 <div class="card-content white-text">
@@ -32,9 +37,9 @@
                     <p>Current Balance Is: <span class = "currentBalance"></span></p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Deposit</a>
-                    <a href="#">Withdrawal</a>
-                    <a href="#">Delete</a>
+                    <a class = "depositButton" value = "0">Deposit</a>
+                    <a class = "withdrawButton" value = "0">Withdrawal</a>
+                    <a class = "deleteButton" value = "0">Delete</a>
                 </div>
             </div>
         </div>
@@ -46,9 +51,9 @@
                     <p>Current Balance Is: <span class = "currentBalance"></span></p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Deposit</a>
-                    <a href="#">Withdrawal</a>
-                    <a href="#">Delete</a>
+                    <a class = "depositButton" value = "1">Deposit</a>
+                    <a class = "withdrawButton" value = "1">Withdrawal</a>
+                    <a class = "deleteButton" value = "1">Delete</a>
                 </div>
             </div>
         </div>
@@ -60,18 +65,46 @@
                     <p>Current Balance Is: <span class = "currentBalance"></span></p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Deposit</a>
-                    <a href="#">Withdrawal</a>
-                    <a href="#">Delete</a>
+                    <a class = "depositButton" value = "2">Deposit</a>
+                    <a class = "withdrawButton" value = "2">Withdrawal</a>
+                    <a class = "deleteButton" value = "2">Delete</a>
                 </div>
             </div>
         </div>
     </div>
 
-    
 </div>
 
+<!-- Deposit Modal Structure -->
+<div class="modal" id = "depositModal">
+    <div class="modal-content">
+        <h4>How Much Would You Like To Add To This Account?</h4>
+        <div class = "input-field col s6">
+            <input id = "depositAmount" type = "number" class = "validate">
+            <label for = "depositAmount">Deposit Amount</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id = "depositButton" class = "modal-close waves-effect waves-green btn-flat">Deposit</button>
+        <button class = "modal-close waves-effect waves-green btn-flat modal-close">Cancel</button>
+    </div>
+</div>
 
+<!-- Deposit Modal Structure -->
+<div class="modal" id = "withdrawalModal">
+    <div class="modal-content">
+        <h4>How Much Would You Like To Withdraw From This Account?</h4>
+        <div class = "input-field col s6">
+            <input id = "withdrawAmount" type = "number" class = "validate">
+            <label for = "withdrawAmount">Withdrawal Amount</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id = "withdrawalButton" class = "modal-close waves-effect waves-green btn-flat">Deposit</button>
+        <button class = "modal-close waves-effect waves-green btn-flat modal-close">Cancel</button>
+    </div>
+</div>
 
-
+<!-- Javascript File -->
+<script src="js/parentspage.js"></script>
 </body>
