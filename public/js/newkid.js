@@ -48,7 +48,6 @@ $(document).ready(function () {
         for (var i = 0; i < data.length; i++) {
             console.log("data: " + data[i]);
             rowsToAdd.push(createParentRow(data[i]));
-            parentSelect.append(createParentRow(data[i]));
         }
        // parentSelect.empty();
         console.log("rowsToAdd: " + rowsToAdd);
