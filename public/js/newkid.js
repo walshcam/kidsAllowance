@@ -42,23 +42,25 @@ $(document).ready(function () {
     // Function to  render a list of parents
     function renderParentsList(data) {
       
-        console.log("Render parents list, data.length:"+data.length);
-        
+        console.log("Render parents list, data.length: " + data.length);
+        console.log(data);
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
-            console.log("data:"+data[i]);
+            console.log("data: " + data[i]);
             rowsToAdd.push(createParentRow(data[i]));
         }
        // parentSelect.empty();
-        console.log("rowsToAdd:"+rowsToAdd);
+        console.log("rowsToAdd: " + rowsToAdd);
         parentSelect.append(rowsToAdd);
         console.log("Appended Rows");
         parentSelect.val(data.id);
+        console.log("Data ID: " + data.id);
+        console.log(parentSelect.val());
     }
 
     // Populates the parents in the dropdown
     function createParentRow(Parent) {
-        console.log(Parent.parentname + ",id:"+Parent.id)
+        console.log("Parent's Name: " + Parent.parentname + ", id: " + Parent.id)
         var listOption = $("<option>");
         listOption.attr("value", Parent.id);
         listOption.text(Parent.parentname);
@@ -67,5 +69,8 @@ $(document).ready(function () {
         return listOption;
         
     }
+
+    //Initialize Materialize Components
+    M.AutoInit();
 
 });
