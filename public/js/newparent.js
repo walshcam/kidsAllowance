@@ -31,7 +31,10 @@ $(document).ready(function() {
   
     
     function insertparent(parentData) {
-      $.post("/api/newparent", parentData)
+      $.post("/api/newparent", parentData).then(function(data) {
+        window.location = "/parentspage?username=" + usernameinput.val().trim();
+    });
+
         
     }  
 

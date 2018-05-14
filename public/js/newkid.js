@@ -21,7 +21,7 @@ $(document).ready(function () {
             alert("Name cannot be empty")
             return;
         }
-
+       
         insertkid({
             kidname: nameinput.val().trim(),
             username: usernameinput.val().trim(),
@@ -30,13 +30,21 @@ $(document).ready(function () {
             total: newkidbalance.val(),
             ParentId: parentSelect.val()
         });
+    
+       
+       
     }
 
 
     function insertkid(kidData) {
-        $.post("/api/newkid", kidData)
+        $.post("/api/newkid", kidData).then(function(data) {
+            window.location = "/kidspage?username=" + usernameinput.val().trim();
+        });
 
-    }
+    }  
+      
+
+    
 
     function getParentsList() {
         console.log("Retrieve parents list");

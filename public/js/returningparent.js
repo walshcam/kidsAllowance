@@ -9,6 +9,8 @@ $(document).ready(function () {
         var usernameinput = $("#returningparentusername").val().trim();
         var passwordinput = $("#returningparentpassword").val().trim();
         var matchFound = false;
+        window.location.href = "/parentspage?username=" + usernameinput;
+
 
         // $.get("/api/parentslist", function (data) {
         //     console.log("USER ENTERED:"+usernameinput + "," + passwordinput);
