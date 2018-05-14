@@ -10,12 +10,47 @@ $(document).ready(function () {
   var kiduser = $("#kiduser");
   var url = window.location.search;
   var usernm;
+  var backchoice;
 
 // Render the kids page with info
     getkiddata();
 
 // Wish form on submit
     $(document).on("submit", "#wishform", wishformsubmit);
+// Background for on submit
+    $(document).on("submit", "#backform", backformsubmit);
+
+   
+
+    function backformsubmit(event) {
+      event.preventDefault();
+      var back = document.forms[1];
+      console.log("back: " + back);
+      backchoice = "";
+      for(var i=0; i<back.length; i++) {
+        if(back[i].checked) {
+          backchoice=back[i].value;
+        }
+      }
+      insertback({
+        username: usernm,
+        background: backchoice
+      })
+    }
+
+
+    function insertback(data) { 
+      console.log("usernm: " + usernm);
+      $.ajax("/api/kidslist", {
+       type: "PUT",
+       data: data
+     }).then(
+       function() {
+         getkiddata();
+        
+         console.log("logged new background");
+    });
+    }
 
 
     function wishformsubmit(event) {
@@ -65,6 +100,7 @@ $(document).ready(function () {
   function renderkidspage(data) {
     // Inserting data
     kiduser.html("Welcome " + data.username);
+    $(".main").attr('style', 'background-image:' + data.background);
     amount.html(data.total);
     console.log("wishinput: " + wishinput.value);
     // Clearing inputs
