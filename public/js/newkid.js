@@ -1,9 +1,12 @@
 $(document).ready(function () {
 
+    //Initialize Materialize Components
+    M.AutoInit();
+
     var nameinput = $("#newkidname");
     var usernameinput = $("#newkidusername");
     var passwordinput = $("#newkidpassword");
-   // var parentnameinput = $("#newkidparentname");
+    var parentnameinput = $("#newkidparentname");
     var newkidbalance = $("#newkidbalance");
     var parentSelect = $("#newkidparentname");
     var parentId;
@@ -23,7 +26,7 @@ $(document).ready(function () {
             kidname: nameinput.val().trim(),
             username: usernameinput.val().trim(),
             kidpassword: passwordinput.val().trim(),
-           // parentname: parentnameinput.val().trim(),
+            parentname: parentnameinput.val().trim(),
             total: newkidbalance.val(),
             ParentId: parentSelect.val()
         });
@@ -48,14 +51,19 @@ $(document).ready(function () {
         for (var i = 0; i < data.length; i++) {
             console.log("data: " + data[i]);
             rowsToAdd.push(createParentRow(data[i]));
+            parentSelect.append(createParentRow(data[i]));
+            parentSelect.val(data[i].id);
         }
        // parentSelect.empty();
         console.log("rowsToAdd: " + rowsToAdd);
-        parentSelect.append(rowsToAdd);
-        console.log("Appended Rows");
-        parentSelect.val(data.id);
+        // parentSelect.append(rowsToAdd);
+        console.log("Appennodded Rows");
+        // parentSelect.val(data.id);
         console.log("Data ID: " + data.id);
         console.log(parentSelect.val());
+        //Initialize Materialize Dropdown Components
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
     }
 
     // Populates the parents in the dropdown
@@ -69,8 +77,5 @@ $(document).ready(function () {
         return listOption;
         
     }
-
-    //Initialize Materialize Components
-    M.AutoInit();
 
 });
