@@ -4,8 +4,8 @@ $(document).ready(function () {
     //getparents();
 
 
-    function getparents() {
-
+    function getparents(event) {
+        event.preventDefault();
         var usernameinput = $("#returningparentusername").val().trim();
         var passwordinput = $("#returningparentpassword").val().trim();
         var matchFound = false;

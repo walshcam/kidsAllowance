@@ -4,12 +4,14 @@ $(document).ready(function () {
     //getparents();
 
 
-    function getkids() {
-
+    function getkids(event) {
+        event.preventDefault();
         var usernameinput = $("#returningkidusername").val().trim();
         var passwordinput = $("#returningkidpassword").val().trim();
-        var matchFound = false;
-        window.location.href = "/kidspage?username=" + usernameinput;
+        // var matchFound = false;
+        console.log(usernameinput);
+        window.location = "/kidspage?username=" + usernameinput;
+        // window.location = "/kidspage?username=" + usernameinput;
         // $.get("/api/kidslist", function (data) {
         //     console.log("USER ENTERED:"+usernameinput + "," + passwordinput);
         //     for (var i = 0; i < data.length; i++) {
