@@ -26,7 +26,7 @@ module.exports = function(app) {
           if(dbUser){
             console.log(dbUser);
             if(dbUser.dataValues.parentpassword===req.body.password){
-              res.redirect("/parentspage");
+              res.redirect("/parent?ParentId="+dbUser.dataValues.id);
             }
             else{
               res.redirect("/returningparent");
@@ -67,6 +67,10 @@ module.exports = function(app) {
 
     app.get("/parentspage", function (req, res) {
       res.sendFile(path.join(__dirname, "../public/parentspage.html"))
+    });
+
+    app.get("/parent", function (req, res) {
+      res.sendFile(path.join(__dirname, "../public/parent.html"))
     });
 };
   
