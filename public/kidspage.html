@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class = "col s12">
             <div class="card teal lighten-4">
                 <div class="card-content center-align">
-                    <h1>Kid Page</h1>
+                    <h1 id="kiduser"></h1>
                 </div>
             </div>
         </div>
@@ -76,9 +76,9 @@
             </div>
         </div>
 
-        <!-- Form To Input A New Goal -->
+        <!-- Form To Input A New Goal  -->
         <div class="row">
-            <form class="col s12">
+            <form id="wishform" class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
                         <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -94,32 +94,11 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> 
+    
     </div>
     
 </div>
-
-<!-- <script>
- $("#wishSubmit").on("click", function(event) {
-     
-    var newWish = {
-        wish: $("#textarea1").val().trim(),
-        cost: $("#textarea2").val().trim()
-       
-      };
-      console.log("newwish:" + newWish)
-
-       $.ajax("/wish", {
-        type: "POST",
-        data: newWish
-      }).then(
-        function() {
-          console.log("logged new wish");
-
-
- });
-}); -->
-
 
 
 <script src="js/kidspage.js" type="text/javascript"></script>
