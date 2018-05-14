@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    //Initialize Materialize Components
+    M.AutoInit();
+
     var kid = $("#selectkid");
     var transaction = $("#selecttransactiontype");
     var amount = $("#amount");
@@ -77,6 +80,9 @@ $(document).ready(function () {
         kid.append(rowsToAdd);
         console.log("Appended Rows");
         kid.val(data.id);
+        //Initialize Materialize Dropdown Components
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
     }
 
     
