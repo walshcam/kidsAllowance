@@ -4,13 +4,13 @@ $(document).ready(function () {
     //getparents();
 
 
-    function getkids(event) {
-        event.preventDefault();
+    function getkids() {
+        // event.preventDefault();
         var usernameinput = $("#returningkidusername").val().trim();
         var passwordinput = $("#returningkidpassword").val().trim();
-        // var matchFound = false;
+        var matchFound = false;
         console.log(usernameinput);
-        window.location = "/kidspage?username=" + usernameinput;
+        // window.location = "/kidspage?username=" + usernameinput;
         // window.location = "/kidspage?username=" + usernameinput;
         // $.get("/api/kidslist", function (data) {
         //     console.log("USER ENTERED:"+usernameinput + "," + passwordinput);
