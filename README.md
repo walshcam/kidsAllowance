@@ -24,6 +24,8 @@ The user goes to the home page first. They can either select new or returning us
 
 We are planning to add a transaction table and display a history of transactions.
 
+We also would like to add a functionality where a parent can write a list of chores and their worth. The children can then see this on their page.
+
 
 Click on the following heroku link to preview the completed assignment.
 
