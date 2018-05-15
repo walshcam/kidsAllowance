@@ -4,12 +4,12 @@ $(document).ready(function () {
     //getparents();
 
 
-    function getparents(event) {
-        event.preventDefault();
+    function getparents() {
+        // event.preventDefault();
         var usernameinput = $("#returningparentusername").val().trim();
         var passwordinput = $("#returningparentpassword").val().trim();
         var matchFound = false;
-        window.location.href = "/parentspage?username=" + usernameinput;
+        // window.location.href = "/parentspage?username=" + usernameinput;
 
 
         // $.get("/api/parentslist", function (data) {
