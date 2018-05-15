@@ -1,4 +1,4 @@
-.row {
+/* .row {
     display: flex;
     justify-content: left;
 }
@@ -8,4 +8,9 @@
     margin-right: auto;
     margin-left: auto;
 }
+} */
+
+body {
+    background-image: url(../images/boy-child-clouds-346796.jpg);
+    background-size: cover;
 }
