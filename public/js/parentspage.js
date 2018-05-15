@@ -36,6 +36,7 @@ $(document).ready(function() {
     function generateChildrenCards() {
         $("#inputRow").empty();
         $("#childrenContainer").empty();
+       
 
         // $.get("/api/kid", function(data){
         //     let childrenToAdd = [];

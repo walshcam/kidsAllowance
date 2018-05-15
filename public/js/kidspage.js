@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(document).on("submit", "#backform", backformsubmit);
 
    
-
+// Captures bakcground choice
     function backformsubmit(event) {
       event.preventDefault();
       var back = document.forms[1];
@@ -101,7 +101,7 @@ $(document).ready(function () {
     // Inserting data
     kiduser.html("Welcome " + data.username);
     $(".main").attr('style', 'background-image:' + data.background);
-    amount.html(data.total);
+    amount.html("$" + data.total);
     console.log("wishinput: " + wishinput.value);
     // Clearing inputs
     $('#textarea1').val('');
@@ -110,17 +110,17 @@ $(document).ready(function () {
     M.textareaAutoResize($('#textarea2'));
     console.log("data cost:" + data.cost)
     // calculating amount till goal
+    var diff = (data.cost - data.total);
     if(data.cost === null) {
       difference.html("No goal has been entered")}
-      else {
-        // var wishnum = parseInt(data.cost);
-        // var totalnum = parseInt(data.total);
-        var diff = (data.cost - data.total);
-        console.log("diff: " + diff)
-        difference.html(diff);
+      else if (diff>0) {
+        difference.html("$" + diff); 
+      }
+      else if (diff<=0) {
+        difference.html("You have enough for your goal!")
       };
       wishp.html(data.wish);
-      wishcost.html(data.cost);
+      wishcost.html("$" + data.cost);
 
     }
      

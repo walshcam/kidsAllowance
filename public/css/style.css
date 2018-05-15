@@ -1,0 +1,17 @@
+.card {
+    border-radius: 25px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+#backform {
+    text-align: left;
+}
+
+.labeltitle {
+    text-align: left;
+}
+
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
