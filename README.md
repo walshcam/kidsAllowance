@@ -1,10 +1,10 @@
-#Kids Allowance App!
+# Kids Allowance App!
 
 This is the second project assignment for the UCF Coding Bootcamp.
 
 In this project, we were asked to use node.js, express.js, mysql with sequelize library.We have created the CRUD database operations.
 
-##Getting Started
+## Getting Started
 
 *Kids Allowance Application*
 
@@ -20,16 +20,16 @@ The user goes to the home page first. They can either select new or returning us
 
   - if you are a returning parent you are redirected to parentspage where you can select your kid, deposit or withdraw money for the kid.
 
-##Future Enhancements:
+## Future Enhancements:
 
 We are planning to add a transaction table and display a history of transactions.
 
 
 Click on the following heroku link to preview the completed assignment.
 
-###[Heroku](https://kidsfirstbank.herokuapp.com/)
+### [Heroku](https://kidsfirstbank.herokuapp.com/)
 
-##Built With:
+## Built With:
 
 HTML5
 Materialize
