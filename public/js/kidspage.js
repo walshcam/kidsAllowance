@@ -111,16 +111,21 @@ $(document).ready(function () {
     console.log("data cost:" + data.cost)
     // calculating amount till goal
     var diff = (data.cost - data.total);
-    if(data.cost === null) {
-      difference.html("No goal has been entered")}
+    if(data.cost == null) {
+      difference.html("No goal has been entered")
+     
+    }
       else if (diff>0) {
         difference.html("$" + diff); 
+        wishp.html(data.wish);
+        wishcost.html("$" + data.cost);
       }
       else if (diff<=0) {
-        difference.html("You have enough for your goal!")
+        difference.html("You have enough for your goal!");
+        wishp.html("");
+        wishcost.html("");
       };
-      wishp.html(data.wish);
-      wishcost.html("$" + data.cost);
+     
 
     }
      
