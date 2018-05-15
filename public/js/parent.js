@@ -29,7 +29,6 @@ $(document).ready(function () {
     function handleKidFormSubmit(event) {
         event.preventDefault();
         console.log(kid.val());
-        console.log("EVENT: " + event);
     console.log(amount.val());
     if(transaction.val()==="Withdraw"){
         console.log("Transaction Withdraw:"+transaction.val())
@@ -39,6 +38,7 @@ $(document).ready(function () {
             total: currentbalance-parseInt(amount.val())
         };
         updatetotal(newtotal);
+        successmessage();
         currentbalance = currentbalance-parseInt(amount.val());    
     }
     else if(transaction.val()==="Deposit")
@@ -49,6 +49,7 @@ $(document).ready(function () {
             total: currentbalance+parseInt(amount.val())
         };
         updatetotal(newtotal);
+        successmessage();
         currentbalance = currentbalance+parseInt(amount.val());
     }
     
@@ -103,6 +104,22 @@ $(document).ready(function () {
         
     }
 
+    function successmessage() {
+        let card = $("<div>").addClass("card fade teal darken-1");
+        let cardcontent = $("<div>").addClass("card-content white-text");
+        let content = $("<h1>").addClass("card-title");
+        content.text("The Account Has Been Updated!");
+
+        // Append Message Together
+        cardcontent.append(content);
+        card.append(cardcontent);
+        $("#successmess").append(card);
+
+        // Animation for Message
+        $(".fade").delay(2000).fadeOut(1000);
+
+
+    }
 
 
 });
