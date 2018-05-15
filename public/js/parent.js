@@ -15,6 +15,7 @@ $(document).ready(function () {
 
     if (url.indexOf("?ParentId=") !== -1) {
     pid = url.split("=")[1];
+    console.log("pid: " + pid);
     }
 
 
@@ -28,11 +29,13 @@ $(document).ready(function () {
     function handleKidFormSubmit(event) {
         event.preventDefault();
         console.log(kid.val());
+        console.log("EVENT: " + event);
     console.log(amount.val());
     if(transaction.val()==="Withdraw"){
         console.log("Transaction Withdraw:"+transaction.val())
         var newtotal = {
-            kidname:kid.val().trim(),
+            id: kid.val(),
+            // kidname:kid.val().trim(),
             total: currentbalance-parseInt(amount.val())
         };
         updatetotal(newtotal);
@@ -41,7 +44,8 @@ $(document).ready(function () {
     else if(transaction.val()==="Deposit")
     {   console.log("Transaction Deposit:"+transaction.val())
         var newtotal = {
-            kidname:kid.val().trim(),
+            id: kid.val(),
+            // kidname:kid.val().trim(),
             total: currentbalance+parseInt(amount.val())
         };
         updatetotal(newtotal);
@@ -55,9 +59,9 @@ $(document).ready(function () {
         url: "/api/transactions",
         data: total
         })
-        .then(function() {
+        .then(function(data) {
             console.log("data:"+data);
-            window.location.href = "/parent";
+            // window.location.href = "/parent";
         });
     }
 
@@ -89,7 +93,7 @@ $(document).ready(function () {
     function createKidRow(Kid) {
         console.log(Kid.kidname);
         var listOption = $("<option>");
-        listOption.attr("value", Kid.kidname);
+        listOption.attr("value", Kid.id);
         currentbalance = parseInt(Kid.total);
         console.log(currentbalance);
         listOption.text(Kid.kidname);
